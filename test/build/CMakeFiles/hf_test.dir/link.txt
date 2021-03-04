@@ -1,1 +1,0 @@
-/usr/bin/c++   -std=c++17 -g  -rdynamic CMakeFiles/hf_test.dir/hftest.o CMakeFiles/hf_test.dir/Perf_classes.o CMakeFiles/hf_test.dir/Perf_traits.o CMakeFiles/hf_test.dir/Perf_types.o  -o hf_test  -lfix8 -lPocoFoundation -lPocoNet -lssl -lcrypto -lpthread -lrt 

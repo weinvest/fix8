@@ -1,1 +1,0 @@
-/usr/bin/c++   -std=c++17 -g  -rdynamic CMakeFiles/myfix.dir/myfix.o CMakeFiles/myfix.dir/Myfix_classes.o CMakeFiles/myfix.dir/Myfix_traits.o CMakeFiles/myfix.dir/Myfix_types.o  -o myfix  -lfix8 -lPocoFoundation -lPocoNet -lssl -lcrypto -lpthread -lrt 
