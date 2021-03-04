@@ -1,0 +1,4 @@
+/tmp/fix8-1.4.1/test/build/CMakeFiles/rebuild_cache.dir
+/tmp/fix8-1.4.1/test/build/CMakeFiles/myfix.dir
+/tmp/fix8-1.4.1/test/build/CMakeFiles/edit_cache.dir
+/tmp/fix8-1.4.1/test/build/CMakeFiles/hf_test.dir
