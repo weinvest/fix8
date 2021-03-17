@@ -1001,8 +1001,10 @@ int process(XmlElement& xf, Ctxt& ctxt)
 	osc_hpp << "#define " << bintoaschex(ctxt._out[Ctxt::classes_hpp].first.second) << endl << endl;
     generate_export(osc_hpp, ctxt._fixns);
     osc_hpp << _csMap.find(cs_start_namespace)->second << endl;
+   #if 0
 	osc_hpp << endl << "extern \"C\"" << endl << '{' << endl
       << spacer << "F8_" << ctxt._fixns << "_API const F8MetaCntx& " << ctxt._fixns << "_ctx();" << endl << '}' << endl << endl;
+   #endif
 	osc_hpp << "namespace " << ctxt._fixns << " {" << endl;
 
 	osc_hpp << endl << _csMap.find(cs_divider)->second << endl;
@@ -1072,7 +1074,7 @@ int process(XmlElement& xf, Ctxt& ctxt)
 		osc_hpp << "class " << pp.second._name << " : public "
 			<< (isTrailer || isHeader ? "MessageBase" : "Message") << endl << '{' << endl;
 
-		if (pp.second._fields.get_presence().size())
+		//if (pp.second._fields.get_presence().size())
 		{
 			osr_cpp << _csMap.find(cs_divider)->second << endl;
 			osr_cpp << "const FieldTrait " << pp.second._name << "::_traits[]"
@@ -1133,7 +1135,7 @@ int process(XmlElement& xf, Ctxt& ctxt)
 
       osc_hpp << "public:" << endl;
 		osc_hpp << spacer << "explicit " << pp.second._name << "(bool deepctor=true)";
-		if (pp.second._fields.get_presence().size())
+		//if (pp.second._fields.get_presence().size())
 			osc_hpp << " : " << (isTrailer || isHeader ? "MessageBase" : "Message")
 				<< "(ctx(), _msgtype(), _traits, _fieldcnt, &_ftha)";
 		if (isHeader || isTrailer)
@@ -1278,10 +1280,13 @@ int process(XmlElement& xf, Ctxt& ctxt)
 	osu_hpp << "#endif // " << bintoaschex(ctxt._out[Ctxt::router_hpp].first.second) << endl;
 	osr_cpp << endl << "} // namespace " << ctxt._fixns << endl;
 	osr_cpp << _csMap.find(cs_end_namespace)->second << endl;
+
+#if 0
 	osc_cpp << endl << "// Compiler generated metadata object accessible outside namespace through this function." << endl;
 	osc_cpp << "extern \"C\"" << endl << '{' << endl
       << spacer << "const F8MetaCntx& " << ctxt._fixns << "_ctx() { return " << ctxt._fixns << "::ctx(); }"
       << endl << '}' << endl << endl;
+#endif
 	osc_cpp << _csMap.find(cs_end_namespace)->second << endl;
 	osc_cpp << endl;
 
