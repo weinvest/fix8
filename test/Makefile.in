@@ -811,7 +811,7 @@ distdir-am: $(DISTFILES)
 check-am: all-am
 check: $(BUILT_SOURCES)
 	$(MAKE) $(AM_MAKEFLAGS) check-am
-all-am: Makefile $(PROGRAMS) $(LTLIBRARIES)
+all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) 
 install-binPROGRAMS: install-libLTLIBRARIES
 
 installdirs:
