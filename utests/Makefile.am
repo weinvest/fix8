@@ -95,10 +95,10 @@ persist_objs += $(built)/redispersist.lo
 endif
 session_objs = $(built)/connection.lo $(built)/session.lo
 
+message_test_DEPENDENCIES = $(lib_LTLIBRARIES)
 message_test_LDADD = $(required_objs) $(persist_objs)
 fileLogger_test_LDADD = $(required_objs)
 filePersister_test_LDADD = $(required_objs) $(persist_objs) $(session_objs)
 session_test_LDADD = $(required_objs) $(persist_objs)
 
 endif
-
