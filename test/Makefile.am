@@ -47,6 +47,7 @@ libmyfix_la_SOURCES = Myfix_classes.cpp Myfix_types.hpp Myfix_types.cpp Myfix_tr
 libhftest_la_SOURCES = Perf_types.hpp Perf_types.cpp Perf_traits.cpp \
                        Perf_router.hpp Perf_classes.hpp Perf_classes.cpp
 
+hftest_DEPENDENCIES = $(lib_LTLIBRARIES)
 BUILT_SOURCES = $(libmyfix_la_SOURCES) $(libhftest_la_SOURCES)
 
 CLEANFILES = $(libmyfix_la_SOURCES) $(libhftest_la_SOURCES)
@@ -116,4 +117,3 @@ hftest_LDFLAGS += -lPocoNetSSL -lPocoCrypto
 hfprint_LDFLAGS += -lPocoNetSSL -lPocoCrypto
 harness_LDFLAGS += -lPocoNetSSL -lPocoCrypto
 endif
-
