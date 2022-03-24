@@ -183,8 +183,8 @@ unsigned MessageBase::decode_group(GroupBase *grpbase, const unsigned short fnum
 			Presence::const_iterator itr(grp->_fp.get_presence().end());
 			if (grp->_fp.get(tv, itr, FieldTrait::present))	// already present; next group?
 				break;
-			if (pos == 0 && grp->_fp.getPos(tv, itr) != 1)	// first field in group is mandatory
-				throw MissingRepeatingGroupField(tv);
+			//if (pos == 0 && grp->_fp.getPos(tv, itr) != 1)	// first field in group is mandatory
+			//	throw MissingRepeatingGroupField(tv);
 			const BaseEntry *be(_ctx.find_be(tv));
 			if (!be || !grp->_fp.has(tv, itr))	// unknown field or field not found in sub-group - end of repeats?
 			{
@@ -729,4 +729,3 @@ GroupBase *MessageBase::replace(const unsigned short fnum, GroupBase *with)
 	}
 	return old;
 }
-
