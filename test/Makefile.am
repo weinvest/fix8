@@ -117,4 +117,3 @@ hftest_LDFLAGS += -lPocoNetSSL -lPocoCrypto
 hfprint_LDFLAGS += -lPocoNetSSL -lPocoCrypto
 harness_LDFLAGS += -lPocoNetSSL -lPocoCrypto
 endif
-

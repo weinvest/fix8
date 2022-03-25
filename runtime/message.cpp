@@ -729,4 +729,3 @@ GroupBase *MessageBase::replace(const unsigned short fnum, GroupBase *with)
 	}
 	return old;
 }
-

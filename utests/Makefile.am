@@ -102,4 +102,3 @@ filePersister_test_LDADD = $(required_objs) $(persist_objs) $(session_objs)
 session_test_LDADD = $(required_objs) $(persist_objs)
 
 endif
-
