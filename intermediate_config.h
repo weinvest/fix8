@@ -51,16 +51,16 @@ HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 /* #undef CODECTIMING */
 
 /* configure options */
-#define CONFIGURE_OPTIONS " '--enable-ssl' '--with-thread=stdthread' '--enable-debug'"
+#define CONFIGURE_OPTIONS " '--enable-ssl' '--with-thread=stdthread' '--with-precision-digits=8' '--with-maxmsglen=32768' '--disable-f8test' '--disable-gtest'"
 
 /* Short Date system was configured */
-#define CONFIGURE_SDATE "2021/03/04"
+#define CONFIGURE_SDATE "2022/03/24"
 
 /* Date system was configured */
-#define CONFIGURE_TIME "Thu Mar  4 17:12:49 CST 2021"
+#define CONFIGURE_TIME "Thu Mar 24 19:09:11 CST 2022"
 
 /* date/time as seconds since start epoch */
-#define CONFIGURE_TIME_NUM 1614849169
+#define CONFIGURE_TIME_NUM 1648120151
 
 /* compiler spec */
 #define CPPFLAGS ""
@@ -74,16 +74,16 @@ HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 /* #undef C_ALLOCA */
 
 /* Define to 1 for debugging support */
-#define DEBUG 1
+/* #undef DEBUG */
 
 /* Default number of precision digits for floating point fields (default=2) */
-#define DEFAULT_PRECISION 2
+#define DEFAULT_PRECISION 8
 
 /* Define to 1 to enable experimental socket read */
 /* #undef EXPERIMENTAL_BUFFERED_SOCKET_READ */
 
 /* Define to 1 if gtest available */
-#define HAS_GTEST 1
+/* #undef HAS_GTEST */
 
 /* Define to 1 if Poco available */
 #define HAS_POCO 1
@@ -406,7 +406,7 @@ HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 #define MAX_FLD_LENGTH 2048
 
 /* Maximum length of a FIX message (default=8192) */
-#define MAX_MSG_LENGTH 8192
+#define MAX_MSG_LENGTH 32768
 
 /* Minor version number */
 #define MINOR_VERSION_NUM 4

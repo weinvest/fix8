@@ -134,20 +134,20 @@ namespace ff {
      *
      *
      */
-    enum { N_SLABBUFFER=9, MAX_SLABBUFFER_SIZE=8192};
+    enum { N_SLABBUFFER=11, MAX_SLABBUFFER_SIZE=32768};
     static const int POW2_MIN  = 5;
-    static const int POW2_MAX  = 13;
+    static const int POW2_MAX  = 15;
 
     // array containing different possbile sizes for a slab buffer
     static const int buffersize[N_SLABBUFFER] =
-        { 32, 64,128,256,512,1024,2048,4096,8192  };
+        { 32, 64,128,256,512,1024,2048,4096,8192,16384,32768};
 
     // array containing the allowed numbers (quantity) of buffers. These values will be
     // used together with the array of possible sizes for buffers: they will be paired
     // with a specific buffer size and will denote the number of buffers of that size,
     // present inside the cache.
     static const int nslabs_default[N_SLABBUFFER] =
-        { 512,512,512,512,128,  64,  32,  16,   8 };
+        { 512,512,512,512,128,  64,  32,  16,   8, 8, 8};
 
 #if defined(ALLOCATOR_STATS)
 

@@ -56,22 +56,22 @@ HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 
 /* configure options */
 #ifndef FIX8_CONFIGURE_OPTIONS
-#define FIX8_CONFIGURE_OPTIONS " '--enable-ssl' '--with-thread=stdthread' '--enable-debug'"
+#define FIX8_CONFIGURE_OPTIONS " '--enable-ssl' '--with-thread=stdthread' '--with-precision-digits=8' '--with-maxmsglen=32768' '--disable-f8test' '--disable-gtest'"
 #endif
 
 /* Short Date system was configured */
 #ifndef FIX8_CONFIGURE_SDATE
-#define FIX8_CONFIGURE_SDATE "2021/03/04"
+#define FIX8_CONFIGURE_SDATE "2022/03/24"
 #endif
 
 /* Date system was configured */
 #ifndef FIX8_CONFIGURE_TIME
-#define FIX8_CONFIGURE_TIME "Thu Mar  4 17:12:49 CST 2021"
+#define FIX8_CONFIGURE_TIME "Thu Mar 24 19:09:11 CST 2022"
 #endif
 
 /* date/time as seconds since start epoch */
 #ifndef FIX8_CONFIGURE_TIME_NUM
-#define FIX8_CONFIGURE_TIME_NUM 1614849169
+#define FIX8_CONFIGURE_TIME_NUM 1648120151
 #endif
 
 /* compiler spec */
@@ -88,22 +88,18 @@ HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 /* #undef C_ALLOCA */
 
 /* Define to 1 for debugging support */
-#ifndef FIX8_DEBUG
-#define FIX8_DEBUG 1
-#endif
+/* #undef DEBUG */
 
 /* Default number of precision digits for floating point fields (default=2) */
 #ifndef FIX8_DEFAULT_PRECISION
-#define FIX8_DEFAULT_PRECISION 2
+#define FIX8_DEFAULT_PRECISION 8
 #endif
 
 /* Define to 1 to enable experimental socket read */
 /* #undef EXPERIMENTAL_BUFFERED_SOCKET_READ */
 
 /* Define to 1 if gtest available */
-#ifndef FIX8_HAS_GTEST
-#define FIX8_HAS_GTEST 1
-#endif
+/* #undef HAS_GTEST */
 
 /* Define to 1 if Poco available */
 #ifndef FIX8_HAS_POCO
@@ -577,7 +573,7 @@ HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 
 /* Maximum length of a FIX message (default=8192) */
 #ifndef FIX8_MAX_MSG_LENGTH
-#define FIX8_MAX_MSG_LENGTH 8192
+#define FIX8_MAX_MSG_LENGTH 32768
 #endif
 
 /* Minor version number */

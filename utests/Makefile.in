@@ -215,8 +215,6 @@ filePersister_test_OBJECTS = $(am_filePersister_test_OBJECTS)
 am__message_test_SOURCES_DIST = message_test.cpp
 @USEGTEST_TRUE@am_message_test_OBJECTS = message_test.$(OBJEXT)
 message_test_OBJECTS = $(am_message_test_OBJECTS)
-@USEGTEST_TRUE@message_test_DEPENDENCIES = $(am__DEPENDENCIES_1) \
-@USEGTEST_TRUE@	$(persist_objs)
 am__session_test_SOURCES_DIST = mockConnection.hpp mockConnection.cpp \
 	session_test.cpp
 @USEGTEST_TRUE@am_session_test_OBJECTS = mockConnection.$(OBJEXT) \
@@ -673,6 +671,7 @@ top_srcdir = @top_srcdir@
 @USEGTEST_TRUE@	$(built)/filepersist.lo $(am__append_7) \
 @USEGTEST_TRUE@	$(am__append_8)
 @USEGTEST_TRUE@session_objs = $(built)/connection.lo $(built)/session.lo
+@USEGTEST_TRUE@message_test_DEPENDENCIES = $(lib_LTLIBRARIES)
 @USEGTEST_TRUE@message_test_LDADD = $(required_objs) $(persist_objs)
 @USEGTEST_TRUE@fileLogger_test_LDADD = $(required_objs)
 @USEGTEST_TRUE@filePersister_test_LDADD = $(required_objs) $(persist_objs) $(session_objs)
