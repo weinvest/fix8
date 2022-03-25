@@ -192,6 +192,7 @@ namespace defaults
 		hb_interval=30,
 		connect_timeout=10,
 		log_rotation=5,
+		log_rotation_size=536870912, //512M
 		verification_depth=9
 	};
 }

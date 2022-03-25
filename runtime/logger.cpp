@@ -253,8 +253,8 @@ char Logger::get_thread_code(thread_id_t tid)
 
 //-------------------------------------------------------------------------------------------------
 FileLogger::FileLogger(const string& fname, const LogFlags flags, const Levels levels,
-	const std::string delim, const LogPositions positions, const unsigned rotnum)
-	: Logger(flags, levels, delim, positions), _rotnum(rotnum)
+	const std::string delim, const LogPositions positions, const unsigned rotnum, const unsigned rotsize)
+	: Logger(flags, levels, delim, positions), _rotnum(rotnum), _rotsize(rotsize)
 {
    if (!fname.empty())
    {
@@ -311,6 +311,15 @@ bool FileLogger::rotate(bool force)
 	return true;
 }
 
+void FileLogger::process_logline(LogElement *le)
+{
+    Logger::process_logline(le);
+    auto size = _ofs->tellp();
+    if(size > _rotsize)
+    {
+	rotate(true);
+    }
+}
 //-------------------------------------------------------------------------------------------------
 PipeLogger::PipeLogger(const string& fname, const LogFlags flags, const Levels levels,
 	const std::string delim, const LogPositions positions)

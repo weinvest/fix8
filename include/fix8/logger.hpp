@@ -171,7 +171,7 @@ public:
 #else
 	static const int StdFlags = (1<<sequence|1<<thread|1<<timestamp|1<<level|1<<location);
 #endif
-	static const int rotation_default = 5, max_rotation = 1024;
+	static const int rotation_default = 5, max_rotation = 1024, rotation_default_size=512*(1<<20);
 	using LogFlags = ebitset<Flags>;
 	using Levels = ebitset<Level>;
 	using LogPositions = std::vector<int>;
@@ -360,6 +360,7 @@ class FileLogger : public Logger
 protected:
 	std::string _pathname;
 	unsigned _rotnum;
+        unsigned _rotsize;
 
 public:
 	/*! Ctor.
@@ -370,7 +371,7 @@ public:
 	    \param positions field positions
 	    \param rotnum number of logfile rotations to retain (default=5) */
 	F8API FileLogger(const std::string& pathname, const LogFlags flags, const Levels levels, const std::string delim=" ",
-		const LogPositions positions=LogPositions(), const unsigned rotnum=rotation_default);
+		const LogPositions positions=LogPositions(), const unsigned rotnum=rotation_default, const unsigned rotsize=rotation_default_size);
 
 	/// Dtor.
 	virtual ~FileLogger() {}
@@ -379,6 +380,7 @@ public:
 	    \param force force the rotation (even if the file is set ti append)
 	    \return true on success */
 	F8API virtual bool rotate(bool force=false);
+	F8API void process_logline(LogElement *le) override;
 };
 
 //-------------------------------------------------------------------------------------------------

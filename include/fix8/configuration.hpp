@@ -342,7 +342,12 @@ public:
 	  \return the logfile rotation value or 5 if not found */
 	unsigned get_logfile_rotation(const XmlElement *from, const unsigned def=defaults::log_rotation) const
 		{ return find_or_default(from, "rotation", def); }
-
+	/*! Extract the logfile rotation size
+	  \param from xml entity to search
+	  \param def default value if not found
+	  \return the logfile rotation size or 512M if not found */
+	unsigned get_logfile_rotation_size(const XmlElement *from, const unsigned def=defaults::log_rotation_size) const
+		{ return find_or_default(from, "rotation_size", def); }
 	/*! Extract the heartbeat interval from a session entity.
 	  \param from xml entity to search
 	  \param def default value if not found

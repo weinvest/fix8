@@ -61,17 +61,17 @@ HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 
 /* Short Date system was configured */
 #ifndef FIX8_CONFIGURE_SDATE
-#define FIX8_CONFIGURE_SDATE "2022/03/24"
+#define FIX8_CONFIGURE_SDATE "2022/03/25"
 #endif
 
 /* Date system was configured */
 #ifndef FIX8_CONFIGURE_TIME
-#define FIX8_CONFIGURE_TIME "Thu Mar 24 19:09:11 CST 2022"
+#define FIX8_CONFIGURE_TIME "Fri Mar 25 09:58:22 CST 2022"
 #endif
 
 /* date/time as seconds since start epoch */
 #ifndef FIX8_CONFIGURE_TIME_NUM
-#define FIX8_CONFIGURE_TIME_NUM 1648120151
+#define FIX8_CONFIGURE_TIME_NUM 1648173502
 #endif
 
 /* compiler spec */
