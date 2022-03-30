@@ -3,7 +3,7 @@ Name: fix8
 %define fullversion 1.4.0
 Prefix: %{_prefix}
 Version: 1.4.0
-Release: 250322
+Release: 300322
 License: LGPL
 Group: Development/Libraries
 URL: http://www.fix8.org

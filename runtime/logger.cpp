@@ -99,6 +99,7 @@ int Logger::operator()()
 			process_logline(msg_ptr);
 		}
 #if (FIX8_MPMC_SYSTEM == FIX8_MPMC_FF)
+                msg_ptr->~LogElement();
 		_msg_queue.release(msg_ptr);
 #endif
 	}
@@ -311,14 +312,22 @@ bool FileLogger::rotate(bool force)
 	return true;
 }
 
+#define likely(x) __builtin_expect(!!(x), 1) //gcc内置函数, 帮助编译器分支优化
+#define unlikely(x) __builtin_expect(!!(x), 0)
+
 void FileLogger::process_logline(LogElement *le)
 {
     Logger::process_logline(le);
-    auto size = _ofs->tellp();
-    if(size > _rotsize)
-    {
-	rotate(true);
-    }
+    //auto elapsed = le->_when.get_ticks()-_lastCheckTime.get_ticks();
+    //if(unlikely(elapsed > 5*60*1000000000L))
+    //{
+        elapsed = le->_when;
+        auto size = _ofs->tellp();
+        if(unlikely(size > _rotsize))
+        {
+    	    rotate(true);
+        }
+    //}
 }
 //-------------------------------------------------------------------------------------------------
 PipeLogger::PipeLogger(const string& fname, const LogFlags flags, const Levels levels,

@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone='no'?>
 
-<manpage name="seqedit" section="1" app="fix8" date="2022/03/25" desc="Edit next expected send/receive" built="$">
+<manpage name="seqedit" section="1" app="fix8" date="2022/03/30" desc="Edit next expected send/receive" built="$">
 
 <synopsis>
 <cmd>seqedit [-DRSdhiqv] &lt;perist file prefix&gt;</cmd>

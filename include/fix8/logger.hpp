@@ -361,7 +361,6 @@ protected:
 	std::string _pathname;
 	unsigned _rotnum;
         unsigned _rotsize;
-
 public:
 	/*! Ctor.
 	    \param pathname pathname to log to

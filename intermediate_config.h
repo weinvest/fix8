@@ -54,13 +54,13 @@ HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 #define CONFIGURE_OPTIONS " '--enable-ssl' '--with-thread=stdthread' '--with-precision-digits=8' '--with-maxmsglen=32768' '--disable-f8test' '--disable-gtest'"
 
 /* Short Date system was configured */
-#define CONFIGURE_SDATE "2022/03/25"
+#define CONFIGURE_SDATE "2022/03/30"
 
 /* Date system was configured */
-#define CONFIGURE_TIME "Fri Mar 25 09:58:22 CST 2022"
+#define CONFIGURE_TIME "Wed Mar 30 12:35:48 CST 2022"
 
 /* date/time as seconds since start epoch */
-#define CONFIGURE_TIME_NUM 1648173502
+#define CONFIGURE_TIME_NUM 1648614948
 
 /* compiler spec */
 #define CPPFLAGS ""
